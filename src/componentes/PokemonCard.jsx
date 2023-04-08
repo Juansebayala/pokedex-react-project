@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
-const Tarjeta = styled.div`
+const Card = styled.div`
   background-color: #ffe033;
   display: inline-block;
   width: 15%;
@@ -15,25 +15,25 @@ const Tarjeta = styled.div`
   }
 `;
 
-const Imagen = styled.img`
+const Image = styled.img`
   width: 100%;
 `;
 
-const Nombre = styled.p`
+const Name = styled.p`
   font-size: 1.5em;
   font-weight: bold;
   color: black;
 `;
 
-function TarjetaPokemon({ imagen, nombre }) {
+function PokemonCard({ image, name }) {
   return (
-    <Tarjeta>
-      <Link to={`/pokemon/${nombre}`} style={{ textDecoration: 'none' }}>
-        <Imagen src={imagen} />
-        <Nombre>{nombre}</Nombre>
+    <Card className="pokemon-card">
+      <Link to={`/pokemon/${name}`} style={{ textDecoration: 'none' }}>
+        <Image src={image} />
+        <Name>{name}</Name>
       </Link>
-    </Tarjeta>
+    </Card>
   );
 }
 
-export default TarjetaPokemon;
+export default PokemonCard;
